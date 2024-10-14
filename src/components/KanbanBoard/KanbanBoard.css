@@ -1,0 +1,7 @@
+.kanban-board {
+  display: flex;
+  overflow-x: auto;
+  padding: 24px;
+  height: calc(100vh - 60px);
+  background-color: #F4F5F7;
+}
