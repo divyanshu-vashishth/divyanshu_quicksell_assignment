@@ -1,4 +1,24 @@
 export const groupTickets = (tickets, grouping, users) => {
+  const initialGroups = {};
+
+  if (grouping === 'status') {
+    initialGroups['Backlog'] = [];
+    initialGroups['In progress'] = [];
+    initialGroups['Todo'] = [];
+    initialGroups['Cancelled'] = [];
+    initialGroups['Done'] = [];
+  } else if (grouping === 'priority') {
+    initialGroups['Urgent'] = [];
+    initialGroups['High'] = [];
+    initialGroups['Medium'] = [];
+    initialGroups['Low'] = [];
+    initialGroups['No priority'] = [];
+  } else if (grouping === 'user') {
+    users.forEach(user => {
+      initialGroups[user.name] = [];
+    });
+  }
+
   return tickets.reduce((acc, ticket) => {
     let key;
     switch (grouping) {
@@ -16,7 +36,7 @@ export const groupTickets = (tickets, grouping, users) => {
     }
     acc[key].push(ticket);
     return acc;
-  }, {});
+  }, initialGroups);
 };
 
 export const sortTickets = (tickets, sorting) => {

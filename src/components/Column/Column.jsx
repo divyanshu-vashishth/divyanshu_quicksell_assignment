@@ -39,7 +39,6 @@ function Column({ title, tickets, users, grouping }) {
     } else if (grouping === 'user') {
       const user = users.find(u => u.name === title);
       if (user) {
-        //  return user.avatar; with its availability 
         return {
           available: user.available,
           avatar: 'https://ui-avatars.com/api/?name=' + user.name + '&background=random'
