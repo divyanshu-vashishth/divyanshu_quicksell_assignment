@@ -1,13 +1,19 @@
+
 .column {
   background-color: #F4F5F7;
   border-radius: 8px;
   padding: 16px;
-  /* min-width: 280px; */
-  height: full;
-  min-width: 400px;
+  width: 100%;
   max-width: 400px;
   margin-right: 20px;
-  
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .column {
+    max-width: 100%;
+    margin-right: 0;
+  }
 }
 
 .column-header {
@@ -56,9 +62,7 @@
   scroll-behavior: smooth;
   scrollbar-color: white;
   scrollbar-width: thin;
-  
 }
-
 
 .column-icon {
   width: 16px;
@@ -66,21 +70,17 @@
   margin-right: 8px;
 }
 
-.action-icon {
-  width: 16px;
-  height: 16px;
-  margin-left: 12px;
-  cursor: pointer;
-}
 .user-avatar-container {
   position: relative;
 }
+
 .user-avatar {
   width: 24px;
   height: 24px;
   border-radius: 50%;
   margin-right: 8px;
 }
+
 .availability-indicator {
   position: absolute;
   bottom: 0;

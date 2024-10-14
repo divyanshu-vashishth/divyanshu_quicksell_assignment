@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import Column from '../Column/Column';
-import { groupTickets, sortTickets } from '../../lib/utils';
-import './KanbanBoard.css';
+import React, { useEffect, useState } from "react";
+import Column from "../Column/Column";
+import { groupTickets, sortTickets } from "../../lib/utils";
+import "./KanbanBoard.css";
 
-function KanbanBoard({ tickets, users, grouping, sorting , setIsOpen}) {
+function KanbanBoard({ tickets, users, grouping, sorting, setIsOpen }) {
   const [groupedAndSortedTickets, setGroupedAndSortedTickets] = useState({});
 
   useEffect(() => {
@@ -18,13 +18,13 @@ function KanbanBoard({ tickets, users, grouping, sorting , setIsOpen}) {
   return (
     <div className="kanban-board" onClick={handleBoardClick}>
       {Object.entries(groupedAndSortedTickets).map(([group, groupTickets]) => (
-        <Column 
-  key={group} 
-  title={group} 
-  tickets={groupTickets} 
-  users={users} 
-  grouping={grouping}
-/>
+        <Column
+          key={group}
+          title={group}
+          tickets={groupTickets}
+          users={users}
+          grouping={grouping}
+        />
       ))}
     </div>
   );

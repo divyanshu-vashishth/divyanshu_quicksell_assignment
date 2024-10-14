@@ -4,4 +4,13 @@
   padding: 24px;
   height: calc(100vh - 60px);
   background-color: #F4F5F7;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .kanban-board {
+    flex-direction: column;
+    padding: 16px;
+    gap: 24px;
+  }
 }
